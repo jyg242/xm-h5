@@ -21,7 +21,7 @@
                 <template slot-scope="scope">
                     <el-popover trigger="hover" placement="top">
                     <p>姓名: {{ scope.row.userName }}</p>
-       
+
                     <div slot="reference" class="name-wrapper">
                         <el-tag size="medium">{{ scope.row.userName }}</el-tag>
                     </div>
@@ -65,7 +65,7 @@
             </el-table-column>
         </el-table>
         <div class="block">
-            
+
             <el-pagination
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
@@ -75,13 +75,14 @@
             layout="total, sizes, prev, pager, next, jumper"
             :total="count">
             </el-pagination>
-        </div>      
-    </div>    
+        </div>
+    </div>
 </template>
 
 <script>
 import axios from 'axios'
 import {toTime} from '../filter/time.js'
+import config from '../config'
   export default {
     data() {
       return {
@@ -96,14 +97,14 @@ import {toTime} from '../filter/time.js'
         }
     },
     async mounted() {
-        this.search()    
+        this.search()
         this.total()
-        
+
     },
     methods: {
         //分页查询
       async search(){
-          let {status,data:{code,message}}=await axios.post('http://127.0.0.1:3000/user/all',{
+          let {status,data:{code,message}}=await axios.post(`http://${config.API}:3000/user/all`,{
             page:this.currentPage4
           })
             if(status===200&&code===200){
@@ -118,7 +119,7 @@ import {toTime} from '../filter/time.js'
       },
       //查询总数量
       async total(){
-          let {status,data:{code,message}}=await axios.post('http://127.0.0.1:3000/user/total')
+          let {status,data:{code,message}}=await axios.post(`http://${config.API}:3000/user/total`)
             if(status===200&&code===200){
             this.count=message
         }
@@ -129,7 +130,7 @@ import {toTime} from '../filter/time.js'
     // 删除操作
       async handleDelete(index, row) {
         console.log(index, row,row._id);
-        let {status,data:{code,message}}=await axios.post('http://127.0.0.1:3000/user/del',{
+        let {status,data:{code,message}}=await axios.post(`http://${config.API}:3000/user/del`,{
             _id:row._id
           })
           console.log(status,code,message)
@@ -150,12 +151,12 @@ import {toTime} from '../filter/time.js'
         console.log(`当前页: ${val}`);
         this.currentPage4=val
         this.search()
-       
-        
+
+
       }
     }
 }
-  
+
 </script>
 <style scoped>
     .contant{

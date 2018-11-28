@@ -6,8 +6,8 @@
                 </el-form-item>
                 <el-form-item label="手机号码" prop="phone">
                     <el-input type="text" v-model="ruleForm2.phone" autocomplete="off" class="askinput"></el-input>
-                </el-form-item> 
-                <el-form-item class="askinput"> 
+                </el-form-item>
+                <el-form-item class="askinput">
                     <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
                     <el-button @click="resetForm('ruleForm2')">重置</el-button>
                 </el-form-item>
@@ -17,6 +17,7 @@
 
 <script>
 import axios from 'axios'
+import config from '../config'
     export default {
         data() {
           return {
@@ -26,17 +27,17 @@ import axios from 'axios'
                 user: ''
             },
             rules2: {
-                
+
                         user:[{
                             required:true,message:'请输入真实姓名',trigger:'blur'
                         }],
                         phone:[
                                 { required: true, message: '请输入手机号', trigger: 'blur' },
                                 { pattern: /^1[34578]\d{9}$/, message: '目前只支持中国大陆的手机号码' }
-                        ],   
+                        ],
                         // qq: [
                         // { required: true, message: '请输入qq', trigger: 'blur' }],
-                
+
             }
         };
     },
@@ -44,8 +45,8 @@ import axios from 'axios'
       submitForm(formName) {
         this.$refs[formName].validate(async (valid) => {
           if (valid) {
-            
-            let {status,data:{code,message}} = await axios.post('http://127.0.0.1:3000/user/register',{
+
+            let {status,data:{code,message}} = await axios.post(`http://${config.API}:3000/user/register`,{
                 userName:this.ruleForm2.user,
                 phone:this.ruleForm2.phone,
                 // qq:this.ruleForm2.qq
@@ -79,7 +80,7 @@ import axios from 'axios'
     /* width: 111% !important; */
 }
 .el-form-item__error {
-    
+
     left: -3rem !important;
 }
 </style>
