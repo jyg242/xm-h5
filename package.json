@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "deploy": "pm2 deploy ecosystem.json production",
-    "deploy-setup": "pm2 deploy ecosystem.json production setup"
+    "deploy-setup": "pm2 deploy ecosystem.json production setup",
+    "up": "scp -r dist/* root@47.98.168.57:/www/zf/h5/source/dist"
   },
   "dependencies": {
     "axios": "^0.18.0",
