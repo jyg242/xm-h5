@@ -34,8 +34,8 @@
     .ft1{
     
     text-align: center;
-    font-size: .2rem ;
-    color: #999999;
+    font-size: .7rem ;
+    color: #000000;
     margin: .2rem auto 1rem;
     line-height: .5rem;
     position: relative;
