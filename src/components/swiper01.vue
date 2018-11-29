@@ -12,7 +12,7 @@
              <div >
                 
                     <div><img src="http://zf.vpbong.cn/Public/index/images/other_02.jpg" alt="" width="70%"></div>
-                    <div>未知生物分析</div>
+                    <div>未知物分析</div>
                     <div class="text">未知物分析就是运用各种科学分离 和分析手段去对复杂...
 </div>
                

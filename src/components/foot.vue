@@ -17,26 +17,28 @@
 
     div>img{
         width: 100%;
-        height: 120%;
+        height: 9.5rem;
         /* margin-left: -5.5rem; */
     }
     .ft{
-text-align: center;
-    font-size: 1.2rem;
+    
+    text-align: center;
+    font-size: 1rem;
     color: #000000;
     line-height: 2.2rem;
     position: relative;
-        font-family: arial, "microsoft yahei", "Source Han Sans";
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+    font-family: arial, "microsoft yahei", "Source Han Sans";
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     }
-    .ft-1{
-        text-align: center;
-    font-size: .3rem;
+    .ft1{
+    
+    text-align: center;
+    font-size: .2rem ;
     color: #999999;
-    margin: .2rem auto 0;
+    margin: .2rem auto 1rem;
     line-height: .5rem;
     position: relative;
-        font-family: arial, "microsoft yahei", "Source Han Sans";
+    font-family: arial, "microsoft yahei", "Source Han Sans";
     }
 </style>
