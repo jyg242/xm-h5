@@ -9,6 +9,7 @@
         <Ask class="ask"/>
        
         <swiperAbc/>
+        <beiAn/>>
         <!-- 轮播 -->
         
     </div>
@@ -20,12 +21,14 @@ import Swiper from '../components/swiper'
 import Ask from '../components/ask'
 import Foot from '../components/foot'
 import swiperAbc from '../components/swiper01'
+import beiAn from './beian'
     export default {
         components:{
             headerAll,
             Swiper,
             Ask,
-            Foot,swiperAbc
+            Foot,swiperAbc,
+            beiAn
         }
     }
 </script>
