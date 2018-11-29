@@ -9,7 +9,7 @@
         <Ask class="ask"/>
        
         <swiperAbc/>
-        <beiAn/>>
+        <beiAn/>
         <!-- 轮播 -->
         
     </div>
